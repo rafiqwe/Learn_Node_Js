@@ -13,7 +13,13 @@ const fs = require('fs');
 // })
 
 // rename function to change the name of a file
-fs.rename("output.txt", "hello.txt", (err) => {
-    if(err) console.error("Error renaming file:", err);
-    else console.log("File renamed successfully!");
-})
+// fs.rename("output.txt", "hello.txt", (err) => {
+//     if(err) console.error("Error renaming file:", err);
+//     else console.log("File renamed successfully!");
+// })
+
+// copyFile function to copy a file
+fs.copyFile("hello.txt", "copy.txt", (err) => {
+    if(err) console.error("Error copying file:", err);
+    else console.log("File copied successfully!");
+});
