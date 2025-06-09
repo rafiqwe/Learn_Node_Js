@@ -74,6 +74,14 @@ import express from "express";
 
 const app = express();
 const port = 3000;
+
+// Middleware to log requests
+// This middleware will log the HTTP method and URL of each request
+app.use((req, res, next) => {
+    console.log(`${req.method} request for '${req.url}'`);
+    next(); // Call the next middleware or route handler
+});
+
 app.get("/", (req, res) => {
   res.send("Hello World! Welcome to my Express server.");
 });
@@ -81,9 +89,14 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.send("Hello from the /about route!");
 });
-app.get("/contact", (req, res) => {
-  res.send("Hello from the /contact route!");
+app.get("/contact", (req, res, next) => {
+    return  next(new Error("This is a simulated error for the /contact route."));
 });
+
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke! Please try again later.');
+})
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
