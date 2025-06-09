@@ -25,7 +25,13 @@ const fs = require('fs');
 // });
 
 // unlink function to delete a file
-fs.unlink("copy.txt", (err) => {
-    if(err) console.error("Error deleting file:", err);
-    else console.log("File deleted successfully!");
+// fs.unlink("copy.txt", (err) => {
+//     if(err) console.error("Error deleting file:", err);
+//     else console.log("File deleted successfully!");
+// });
+
+// rmdir function to remove a directory
+fs.rmdir("./example", {recursive: true}, (err) => {
+    if(err) console.error("Error removing directory:", err);
+    else console.log("Directory removed successfully!");
 });
