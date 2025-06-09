@@ -1,4 +1,5 @@
-const fs = require("fs");
+// import fs from "fs";
+// import http from "http";
 
 // writeFile function to create or overwrite a file
 // fs.writeFile("output.txt", "Hello World!", (err) => {
@@ -57,7 +58,7 @@ const fs = require("fs");
 //     if (err) console.error("Error writing file:", err);
 //     else console.log("File written successfully in the new directory!");
 //   });
-//   // than read the file 
+//   // than read the file
 //   fs.readFile("./example/sample.txt", (err, data) => {
 //     if (err) console.error("Error reading file:", err);
 //     else console.log("File content:", data.toString());
@@ -68,3 +69,25 @@ const fs = require("fs");
 //     else console.log("Directory removed successfully!");
 //   });
 // });
+
+import express from "express";
+
+const app = express();
+const port = 3000;
+app.get("/", (req, res) => {
+  res.send("Hello World! Welcome to my Express server.");
+});
+
+app.get("/about", (req, res) => {
+  res.send("Hello from the /about route!");
+});
+app.get("/contact", (req, res) => {
+  res.send("Hello from the /contact route!");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+  console.log(
+    `You can access the /about route at http://localhost:${port}/about`
+  );
+});
