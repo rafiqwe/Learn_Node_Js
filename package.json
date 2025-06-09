@@ -1,0 +1,20 @@
+{
+  "name": "learn_node_js",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/rafiqwe/Learn_Node_Js#readme",
+  "bugs": {
+    "url": "https://github.com/rafiqwe/Learn_Node_Js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafiqwe/Learn_Node_Js.git"
+  },
+  "license": "ISC",
+  "author": "Muhammad Rabbi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
