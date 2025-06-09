@@ -13,9 +13,24 @@ app.get("/", (req, res) => {
     res.render("index", { files });
   });
 });
+
+app.get("/tasks/:fileName", (req, res) => {
+  fs.readFile(
+    `./files/${req.params.fileName}`,
+    "utf-8",
+    function (error, fileData) {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log("File Data :", fileData);
+        res.render("readMore", { fileName: req.params.fileName, fileData: fileData });
+      }
+    }
+  );
+});
+
 app.post("/create", (req, res) => {
-  console.log("Creating file:", req.body.taskName);
-  const filePath = `./files/${req.body.taskName.split(" ").join('_')}.txt`;
+  const filePath = `./files/${req.body.taskName.split(" ").join("_")}.txt`;
   fs.writeFile(filePath, req.body.taskDescription, (err) => {
     if (err) {
       console.error("Error creating file:", err);
