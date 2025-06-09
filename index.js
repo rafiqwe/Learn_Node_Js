@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // writeFile function to create or overwrite a file
 // fs.writeFile("output.txt", "Hello World!", (err) => {
@@ -35,3 +35,15 @@ fs.rmdir("./example", {recursive: true}, (err) => {
     if(err) console.error("Error removing directory:", err);
     else console.log("Directory removed successfully!");
 });
+
+// readFile function to read the content of a file
+// fs.readFile("hello.txt", (err, data) => {
+//   if (err) console.error("Error reading file:", err);
+//   else console.log("File content:", data.toString());
+// });
+
+// mkdir function to create a new directory
+// fs.mkdir("./example", { recursive: true }, (err) => {
+//   if (err) console.error("Error creating directory:", err);
+//   else console.log("Directory created successfully!");
+// });
