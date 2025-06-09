@@ -31,10 +31,10 @@ const fs = require("fs");
 // });
 
 // rmdir function to remove a directory
-fs.rmdir("./example", {recursive: true}, (err) => {
-    if(err) console.error("Error removing directory:", err);
-    else console.log("Directory removed successfully!");
-});
+// fs.rmdir("./example", {recursive: true}, (err) => {
+//     if(err) console.error("Error removing directory:", err);
+//     else console.log("Directory removed successfully!");
+// });
 
 // readFile function to read the content of a file
 // fs.readFile("hello.txt", (err, data) => {
@@ -46,4 +46,25 @@ fs.rmdir("./example", {recursive: true}, (err) => {
 // fs.mkdir("./example", { recursive: true }, (err) => {
 //   if (err) console.error("Error creating directory:", err);
 //   else console.log("Directory created successfully!");
+// });
+
+// writeFile function to create a file in the new directory try to write a file in the new directory
+// fs.mkdir("./example", { recursive: true }, (err) => {
+//   if (err) console.error("Error creating directory:", err);
+//   else console.log("Directory created successfully!");
+//     // Now write a file in the new directory
+//   fs.writeFile("./example/sample.txt", "Sample text", (err) => {
+//     if (err) console.error("Error writing file:", err);
+//     else console.log("File written successfully in the new directory!");
+//   });
+//   // than read the file 
+//   fs.readFile("./example/sample.txt", (err, data) => {
+//     if (err) console.error("Error reading file:", err);
+//     else console.log("File content:", data.toString());
+//   });
+//   // than delete the folder
+//   fs.rmdir("./example", {recursive: true}, (err) => {
+//     if (err) console.error("Error removing directory:", err);
+//     else console.log("Directory removed successfully!");
+//   });
 // });
