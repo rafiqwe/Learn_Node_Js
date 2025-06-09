@@ -75,6 +75,9 @@ import express from "express";
 const app = express();
 const port = 3000;
 
+app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
+
 // Middleware to log requests
 // This middleware will log the HTTP method and URL of each request
 app.use((req, res, next) => {
