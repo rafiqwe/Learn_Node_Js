@@ -11,10 +11,15 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/about", (req, res) => {
-  res.send("Welcome to the About page!");
+app.get("/profile/:username", (req, res) => {
+  const { username } = req.params;
+  res.send(`Welcome to ${username}'s profile page!`);
 });
 
+app.get("/author/:username/:age", (req, res) => {
+  const { username, age } = req.params;
+  res.send(`Welcome to ${username}'s profile page! They are ${age} years old.`);
+});
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
