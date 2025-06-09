@@ -19,7 +19,13 @@ const fs = require('fs');
 // })
 
 // copyFile function to copy a file
-fs.copyFile("hello.txt", "copy.txt", (err) => {
-    if(err) console.error("Error copying file:", err);
-    else console.log("File copied successfully!");
+// fs.copyFile("hello.txt", "copy.txt", (err) => {
+//     if(err) console.error("Error copying file:", err);
+//     else console.log("File copied successfully!");
+// });
+
+// unlink function to delete a file
+fs.unlink("copy.txt", (err) => {
+    if(err) console.error("Error deleting file:", err);
+    else console.log("File deleted successfully!");
 });
