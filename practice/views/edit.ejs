@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Practice</title>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="main w-full min-h-screen bg-gray-900 text-white">
+      <div class="form mt-6 p-4 w-full rounded shadow-lg">
+        <form
+          action="/edit"
+          method="post"
+          class="w-full h-full flex flex-col items-center mt-8"
+        >
+          <input
+            type="text"
+            name="oldFileName"
+            placeholder="Enter Old file name"
+            value="<%= fileName %>"
+            class="border border-gray-300 outline-none block rounded p-2 mb-4 w-full max-w-md"
+          />
+          <input
+            type="text"
+            name="newFileName"
+            placeholder="Enter new file name"
+            class="border border-gray-300 outline-none block rounded p-2 mb-4 w-full max-w-md"
+          />
+          <input
+            type="submit"
+            class="border border-gray-300 block rounded cursor-pointer p-2 mb-4 w-full max-w-md"
+          />
+        </form>
+      </div>
+    </div>
+    <script src="/javascript/script.js"></script>
+  </body>
+</html>

@@ -20,6 +20,7 @@
             name="taskName"
             placeholder="Enter your task name"
             class="border border-gray-300 outline-none block rounded p-2 mb-4 w-full max-w-md"
+            required
           />
           <textarea
             name="taskDescription"
@@ -27,6 +28,7 @@
             class="border border-gray-300 outline-none block rounded p-2 mb-4 w-full max-w-md resize-none"
             placeholder="Enter task description"
             name="taskDescription"
+            required
           ></textarea>
           <input
             type="submit"
@@ -42,11 +44,19 @@
             class="task w-74 px-3 py-4 rounded-md bg-zinc-800 shadow-md mb-4"
           >
             <h1 class="text-2xl tracking-tighter"><%= file %></h1>
-            <a
-              href="/tasks/<%=file%>"
-              class="text-blue-500 hover:underline inline-block mt-4"
-              >Read More</a
-            >
+            <div class="mt-6 flex gap-5 ">
+              <a
+                href="/tasks/<%=file%>"
+                class="text-blue-500 hover:underline inline-block mb-3"
+                >Read More</a
+              >
+              <a href="/edit/<%=file%>" class="text-zinc-500 hover:underline">
+                Edit File Name
+              </a>
+              <!-- <a href="/delete/<%=file%>" class="text-zinc-500 hover:underline">
+                delete
+              </a> -->
+            </div>
           </div>
           <% }) } else { %>
           <h1 class="text-2xl tracking-tighter">No Tasks Available</h1>
